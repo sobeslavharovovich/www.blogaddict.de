@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title>Serverguard-Benachrichtigungen mit Prowl  - Blogaddict</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="microid" content="mailto+http:sha1:f73202fa68a45873f26c6ee69d5325cba819e711" />
+    <link rel="stylesheet" type="text/css" href="../serendipity.css" />
+    <link rel="alternate"  type="application/rss+xml" title="Blogaddict RSS feed" href="http://www.blogaddict.de/feeds/index.rss2" />
+    <link rel="alternate"  type="application/x.atom+xml"  title="Blogaddict Atom feed"  href="http://www.blogaddict.de/feeds/atom.xml" />
+    <link rel="pingback" href="http://www.blogaddict.de/comment.php?type=pingback&amp;entry_id=306" />
+
+<script type="text/javascript" src="../plugin/ls-js/index.html"></script><link rel="pingback" href="../serendipity_xmlrpc.php.html" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../serendipity_xmlrpc.php%3Fxsd=true.html" />
+
+
+<meta name="google-site-verification" content="VW1KZzlLfapPcjW9tjMPsvNkqURae-T5Q58SBvSpHm8" />
+<meta name="ICBM" content="48.185918,11.64098">
+
+</head>
+
+<body>
+
+<div id="serendipity_banner">
+    <h1><a class="homelink1" href="../index.html">Serverguard-Benachrichtigungen mit Prowl</a></h1>
+    <h2><a class="homelink2" href="../index.html">Blogaddict</a></h2>
+</div>
+
+<table id="mainpane">
+    <tr>
+        <td id="content" valign="top"><!-- CONTENT START -->
+
+	<div class="serendipity_content_message"></div>
+
+<!-- ENTRIES START -->
+    
+
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Montag, 25. Januar 2010</h3>
+        
+                <h4 class="serendipity_title"><a href="serverguard-prowl.html">Serverguard-Benachrichtigungen mit Prowl</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p><a href="http://github.com/mariow/serverguard-prowl-notifier"><img src="http://www.blogaddict.de/uploads/serverguard-prowl-script.s9yThumb.png" style="float:left; padding-right: 10px; padding-bottom: 10px;" border="0"/></a>Seit heute bietet der Serverüberwacher meines Vertrauens, <a href="http://www.serverguard24.de/">Serverguard24</a>, zusätzlich zu Email und SMS auch Benachrichtigungen via HTTP-Push an. Die Weiterverarbeitung von Benachrichtigungen wird damit deutlich vereinfacht, man könnte zum Beispiel auf leicht zu lösende Probleme mit einem automatischen Neustart von Diensten a la Monit reagieren. Oder man kann sich seine Benachrichtigungen so unbauen, dass sie via <a href="http://prowl.weks.net/">Prowl</a> direkt auf das iPhone gepusht werden.</p>
+            </div>
+
+                        <div class="serendipity_entry_extended"><a id="extended"></a><p>Schon weil ich bei Prowl über die Wichtigkeit einer Nachricht definieren kann, ob sie mich auch nachts aus dem Schlaf reißen darf, ist das ein deutlicher Mehrwert gegenüber SMS.</p><p>Bei HTTP-Push übergibt Serverguard alle Details einer Benachrichtigung per POST an eine beliebige Url. Da wiederrum Prowl über die API per einfachem GET-Request anzusteuern ist, ist ein Script zum weiterleiten der Nachrichten schnell gebaut - es müssen ledigliche die Werte von Serverguard in die zwei Felder "event" und "description" von Prowl nach Wunsch umfortmatiert werden.<br/>Als kleines Gimmick habe ich noch eine dynamische Priorisierung eingebaut, damit anhand der Nachrichten-Kategorie (OK, WARNING, CRITICAL) eine Prowl-Prio zwischen Normal und Emergency gesetzt wird.<br/>Das Skript findet sich bei Github als <a href="http://github.com/mariow/serverguard-prowl-notifier">serverguard-prowl-notifier</a> und muss nur noch um den eigenen API-Key erweitert und auf den Webspace der Wahl hochgeladen werden.</p></div>
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="../k/9-Web/index.html">Web</a>                
+                                    um
+                 <a href="serverguard-prowl.html">10:00</a>
+
+                                                            | <a href="serverguard-prowl.html#comments">Kommentar (1)</a>
+                                    
+                                                            | <a href="serverguard-prowl.html#trackbacks">Trackback (1)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/admin" title="admin" rel="tag">admin</a>, <a href="../plugin/tag/iphone/index.html" title="iphone" rel="tag">iphone</a>, <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="../plugin/tag/prowl/index.html" title="prowl" rel="tag">prowl</a>, <a href="http://www.blogaddict.de/plugin/tag/serverguard" title="serverguard" rel="tag">serverguard</a>, <a href="http://www.blogaddict.de/plugin/tag/ueberwachung" title="ueberwachung" rel="tag">ueberwachung</a>, <a href="../plugin/tag/web/index.html" title="web" rel="tag">web</a></div><div class="serendipity_freeTag_related">Artikel mit ähnlichen Themen:<br /> <a href="http://www.blogaddict.de/a/315-Niveaulos..html" title="Niveaulos.">Niveaulos.</a><br /> <a href="../a/314-iPhone-Push-fuer-FTP-Uploads.html" title="iPhone-Push für FTP-Uploads">iPhone-Push für FTP-Uploads</a><br /> <a href="http://www.blogaddict.de/a/311-Rivva-made-my-day.html" title="Rivva made my day">Rivva made my day</a><br /> <a href="http://www.blogaddict.de/a/310-Linksammlung-I.html" title="Linksammlung I">Linksammlung I</a><br /> <a href="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html" title="gFTP Passwort sichtbar machen">gFTP Passwort sichtbar machen</a><br /></div><br /><div class="entry_last_modified" style="text-align: right">Zuletzt bearbeitet am 25.01.2010 10:14</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote306'></a><span class="serendipity_karmaVoting_visits"> 3707 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Serverguard-Benachrichtigungen mit Prowl';
+var flattr_dsc = 'Seit heute bietet der Serverüberwacher meines Vertrauens, Serverguard24, zusätzlich zu Email und SMS auch Benachrichtigungen via HTTP-Push an. Die Weiterverarbeitung von Benachrichtigungen wird damit deutlich vereinfacht, man könnte zum Beispiel auf leicht zu lösende Probleme mit einem automatischen Neustart von Diensten a la Monit reagieren. Oder man kann sich seine Benachrichtigungen so unbauen, dass sie via Prowl direkt auf das iPhone gepusht werden.';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'admin,iphone,linux,prowl,serverguard,ueberwachung,web';
+var flattr_url = 'http://www.blogaddict.de/a/306-Serverguard-Benachrichtigungen-mit-Prowl.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_306.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=306"
+                 dc:title="Serverguard-Benachrichtigungen mit Prowl"
+                 dc:identifier="http://www.blogaddict.de/permalink/serverguard-prowl.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F306-Serverguard-Benachrichtigungen-mit-Prowl.html&amp;exttitle=Serverguard-Benachrichtigungen%20mit%20Prowl" title="Serverguard-Benachrichtigungen mit Prowl bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F306-Serverguard-Benachrichtigungen-mit-Prowl.html" title="Serverguard-Benachrichtigungen mit Prowl bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F306-Serverguard-Benachrichtigungen-mit-Prowl.html&amp;title=Serverguard-Benachrichtigungen%20mit%20Prowl" title="Serverguard-Benachrichtigungen mit Prowl bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F306-Serverguard-Benachrichtigungen-mit-Prowl.html&amp;title=Serverguard-Benachrichtigungen%20mit%20Prowl" title="Serverguard-Benachrichtigungen mit Prowl bei Google bookmarken">Google</a>
+
+</div>
+
+                    
+            
+            
+            
+            
+            <div class="serendipity_comments serendipity_section_trackbacks">
+                <br />
+                <a id="trackbacks"></a>
+                <div class="serendipity_commentsTitle">Trackbacks</div>
+                    <div class="serendipity_center">
+                        <a rel="nofollow" style="font-weight: normal" href="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=306" onclick="alert('Dieser Link ist nicht aktiv. Er enthält die Trackback-URI zu diesem Eintrag. Sie können diese URI benutzen, um Ping- und Trackbacks von Ihrem eigenen Blog zu diesem Eintrag zu schicken. Um den Link zu kopieren, klicken Sie ihn mit der rechten Maustaste an und wählen &quot;Verknüpfung kopieren&quot; im Internet Explorer oder &quot;Linkadresse kopieren&quot; in Mozilla/Firefox.'); return false;" title="Dieser Link ist nicht aktiv. Er enthält die Trackback-URI zu diesem Eintrag. Sie können diese URI benutzen, um Ping- und Trackbacks von Ihrem eigenen Blog zu diesem Eintrag zu schicken. Um den Link zu kopieren, klicken Sie ihn mit der rechten Maustaste an und wählen &quot;Verknüpfung kopieren&quot; im Internet Explorer oder &quot;Linkadresse kopieren&quot; in Mozilla/Firefox.">Trackback für spezifische URI dieses Eintrags</a>
+                    </div>
+                    <br />
+                            <div class="serendipity_comment">
+        <a id="c218"></a>
+        <div class="serendipity_commentBody">
+            <a href="../a/314-iPhone-Push-fuer-FTP-Uploads.html" >iPhone-Push für FTP-Uploads</a><br />
+            Wenn man einen FTP-Server hauptsächlich dazu betreibt, dort vereinzelte Dateien von anderen Leuten zu empfangen, kann es lohnen über Uploads informiert zu werden. Pure-FTPd bietet - abseits von einer sehr einfachen Einrichtung - die schöne Möglichkeit für
+        </div>
+        <div class="serendipity_comment_source">
+            <b>Weblog:</b> Blogaddict<br />
+            <b>Aufgenommen:</b> Apr 28, 10:20
+                </div>
+    </div>
+
+            </div>
+        
+                    <div class="serendipity_comments serendipity_section_comments">
+                <br />
+                <a id="comments"></a>
+                <div class="serendipity_commentsTitle">Kommentare</div>
+                <div class="serendipity_center">Ansicht der Kommentare: 
+                                    (<a rel="nofollow" href="http://www.blogaddict.de/index.php?url=a/306-Serverguard-Benachrichtigungen-mit-Prowl.html&amp;serendipity[cview]=linear#comments">Linear</a> | Verschachtelt)
+                                </div>
+                <br />
+                        <a id="c221"></a>
+    <div id="serendipity_comment_221" class="serendipity_comment serendipity_comment_author_Nicole comment_oddbox" style="padding-left: 0px">
+        <div class="serendipity_commentBody">Hi,<br />
+<br />
+gibt es noch weitere alternative Server-Überwachungsdienste?<br />
+<br />
+Ich betreibe einen Blog, lohnt sich das dafür überhaupt oder mehr für eCommerce Shops?<br />
+Möchte in kürze einen Terraristik Shop spezialisiert auf Skorpione aufbauen und da meine Geldmittel mehr als beschränkt sind, dürfte solch ein Dienst mir nicht so stark aufs Portmonnaie schlagen.<br />
+<br />
+Danke für Info!<br />
+<br />
+LG<br />
+Nici</div>
+        <div class="serendipity_comment_source">
+            <a class="comment_source_trace" href="serverguard-prowl.html#c221">#1</a>
+            <span class="comment_source_author">
+                            Nicole
+                        </span>
+                            (<a class="comment_source_url" href="http://skorpion-info.de" title="http://skorpion-info.de">Homepage</a>)
+                        am
+            <span class="comment_source_date">12.05.2010 14:22</span>
+
+                                        (<a class="comment_reply" href="serverguard-prowl.html#serendipity_CommentForm" id="serendipity_reply_221" onclick="document.getElementById('serendipity_replyTo').value='221'; ">Antwort</a>)
+                <div id="serendipity_replyform_221"></div>
+                    </div>
+    </div>
+
+
+                                <a id="feedback"></a>
+
+                
+                
+                <br />
+                <div class="serendipity_section_commentform">
+	                <div class="serendipity_commentsTitle">Kommentar schreiben</div>
+	                <div id="serendipityCommentFormC" class="serendipityCommentForm">
+    <div id="serendipity_replyform_0"></div>
+    <a id="serendipity_CommentForm"></a>
+    <form id="serendipity_comment" action="http://www.blogaddict.de/index.php?url=a/306-Serverguard-Benachrichtigungen-mit-Prowl.html#feedback" method="post">
+    <div><input type="hidden" name="serendipity[entry_id]" value="306" /></div>
+    <table border="0" width="100%" cellpadding="3">
+        <tr>
+            <td class="serendipity_commentsLabel"><label for="serendipity_commentform_name">Name</label></td>
+            <td class="serendipity_commentsValue"><input type="text" id="serendipity_commentform_name" name="serendipity[name]" value="" size="30" /></td>
+        </tr>
+
+        <tr>
+            <td class="serendipity_commentsLabel"><label for="serendipity_commentform_email">E-Mail</label></td>
+            <td class="serendipity_commentsValue"><input type="text" id="serendipity_commentform_email" name="serendipity[email]" value="" /></td>
+        </tr>
+
+        <tr>
+            <td class="serendipity_commentsLabel"><label for="serendipity_commentform_url">Homepage</label></td>
+            <td class="serendipity_commentsValue"><input type="text" id="serendipity_commentform_url" name="serendipity[url]" value="" /></td>
+        </tr>
+
+        <tr>
+            <td class="serendipity_commentsLabel"><label for="serendipity_replyTo">Antwort zu</label></td>
+            <td class="serendipity_commentsValue"><select id="serendipity_replyTo" onchange="" name="serendipity[replyTo]"><option value="0">[ Ursprung ]</option><option value="221">#1: Nicole am 12.05.2010 14:22</option>
+</select></td>
+        </tr>
+
+        <tr>
+            <td class="serendipity_commentsLabel"><label for="serendipity_commentform_comment">Kommentar</label></td>
+            <td class="serendipity_commentsValue">
+                <textarea rows="10" cols="40" id="serendipity_commentform_comment" name="serendipity[comment]"></textarea><br />
+                <div class="serendipity_commentDirection serendipity_comment_s9ymarkup">Umschließende Sterne heben ein Wort hervor (*wort*), per _wort_ kann ein Wort unterstrichen werden.</div><div class="serendipity_commentDirection serendipity_comment_emoticate">Standard-Text Smilies wie :-) und ;-) werden zu Bildern konvertiert.</div><div class="serendipity_commentDirection serendipity_comment_spamblock">Die angegebene E-Mail-Adresse wird nicht dargestellt, sondern nur für eventuelle Benachrichtigungen verwendet.</div><input type="hidden" name="serendipity[token]" value="d50235199ea933e00798e7c1312e20e3" /><div class="serendipity_commentDirection serendipity_comment_captcha"><br />Um maschinelle und automatische Übertragung von Spamkommentaren zu verhindern, bitte die Zeichenfolge im dargestellten Bild in der Eingabemaske eintragen. Nur wenn die Zeichenfolge richtig eingegeben wurde, kann der Kommentar angenommen werden. Bitte beachten Sie, dass Ihr Browser Cookies unterstützen muss um dieses Verfahren anzuwenden. <br /><img src="http://www.blogaddict.de/plugin/captcha_11b10cd0a59931decd73af1ebe3115d1" onclick="this.src=this.src + '1'" title="Bitte die dargestellte Zeichenfolge in die Eingabemaske eintragen!" alt="CAPTCHA" class="captcha" /><br /><label for="captcha">Hier die Zeichenfolge der Spamschutz-Grafik eintragen: </label><br /><input class="input_textbox" type="text" size="5" name="serendipity[captcha]" value="" id="captcha" /></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>&#160;</td>
+            <td class="serendipity_commentsLabel">
+                <input id="checkbox_remember" type="checkbox" name="serendipity[remember]"  /><label for="checkbox_remember">Daten merken? </label>
+                    <br />
+                <input id="checkbox_subscribe" type="checkbox" name="serendipity[subscribe]"  /><label for="checkbox_subscribe">Bei Aktualisierung dieser Kommentare benachrichtigen</label>
+                </td>
+       </tr>
+
+
+       <tr>
+            <td>&#160;</td>
+            <td><input type="submit" name="serendipity[submit]" value="Kommentar abschicken" /> <input type="submit" id="serendipity_preview" name="serendipity[preview]" value="Vorschau" /></td>
+        </tr>
+    </table>
+    </form>
+    <script type="text/javascript">
+    // this ensures coComment gets the correct values
+    coco =
+    {
+    tool          : "Serendipity",
+    siteurl       : "http://www.blogaddict.de/",
+    sitetitle     : "Blogaddict",
+    pageurl       : "http://www.blogaddict.de/permalink/serverguard-prowl.html",
+    pagetitle     : "Serverguard-Benachrichtigungen mit Prowl",
+    author        : "",
+    authorID      : "serendipity[name]",
+    formID        : "serendipity_comment",
+    textareaID    : "serendipity[comment]",
+    buttonID      : "serendipity[submit]"
+    }
+    </script>
+    <script id="cocomment-fetchlet" src="http://www.cocomment.com/js/enabler.js" type="text/javascript"> // this activates coComment
+    </script>
+    <!-- Performancing Metrics -->
+    <script type="text/javascript">
+    z_post_title="Serverguard-Benachrichtigungen mit Prowl";
+    z_post_category="";
+    </script>
+</div>
+				</div>
+
+                            </div>
+        
+        
+            </div>
+    
+    <div class='serendipity_entryFooter' style="text-align: center">
+    
+    
+    
+    
+    </div>
+<!-- ENTRIES END -->
+
+
+<!-- CONTENT END --></td>
+        <td id="serendipityRightSideBar" valign="top">    <div class="serendipitySideBarItem container_imprint">
+        <div class="serendipitySideBarContent"><a href="../pages/impressum.html" rel="nofollow">Impressum</a></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_quicksearch_plugin">
+        <h3 class="serendipitySideBarTitle serendipity_quicksearch_plugin">Suche</h3>        <div class="serendipitySideBarContent"><form id="searchform" action="http://www.blogaddict.de/index.php" method="get">
+    <div>
+        <input type="hidden"  name="serendipity[action]" value="search" />
+        <input alt="Suche" type="text"   id="serendipityQuickSearchTermField" name="serendipity[searchTerm]" size="13" style="width: 12em;" />
+		<input class="quicksearch_submit" type="submit" value="&gt;" alt="Suche" name="serendipity[searchButton]" title="Los!" style="width: 2em;" />
+    </div>
+    <div id="LSResult" style="display: none;"><div id="LSShadow"></div></div>
+</form>
+<script type="text/javascript">
+                    lsbase = "http://www.blogaddict.de/plugin/ls?";
+                    waittext = "Suche aktiviert, bitte warten...";
+                    notfoundtext = "Kein passender Eintrag vorhanden";
+                    addLoadEvent(liveSearchInit);
+                    </script></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_plugin_recententries">
+        <h3 class="serendipitySideBarTitle serendipity_plugin_recententries">Aktuelle Einträge</h3>        <div class="serendipitySideBarContent"><a href="../a/328-Waterclimb-2011.html" title="Waterclimb 2011">Waterclimb 2011</a><br /><div class="serendipitySideBarDate">Freitag, Juni  3 2011</div><br /><a href="../a/327-So-schoen-kann-ein-Schneesturm-sein.html" title="So schön kann ein Schneesturm sein">So schön kann ein Schneesturm sein</a><br /><div class="serendipitySideBarDate">Freitag, Dezember 31 2010</div><br /><a href="../a/326-Skype-5-Mac-lesbar-machen.html" title="Skype 5 Mac lesbar machen">Skype 5 Mac lesbar machen</a><br /><div class="serendipitySideBarDate">Freitag, November  5 2010</div><br /><a href="../a/325-Gute-Frage.html" title="Gute Frage">Gute Frage</a><br /><div class="serendipitySideBarDate">Freitag, Oktober  1 2010</div><br /><a href="../a/324-Seltsame-SMS-aus-Vietnam-und-Indien.html" title="Seltsame SMS aus Vietnam und Indien">Seltsame SMS aus Vietnam und Indien</a><br /><div class="serendipitySideBarDate">Sonntag, Juli 25 2010</div><br /><a href="../a/323-Workaround-Prototype-1.6.1-und-X-JSON-in-Firefox.html" title="Workaround: Prototype 1.6.1 und X-JSON in Firefox">Workaround: Prototype 1.6.1 und X-JSON in Firefox</a><br /><div class="serendipitySideBarDate">Freitag, Juli 23 2010</div><br /><a href="../a/322-Was-ich-lieber-haette-als-einen-Gratis-Bumper.html" title="Was ich lieber hätte als einen Gratis-Bumper">Was ich lieber hätte als einen Gratis-Bumper</a><br /><div class="serendipitySideBarDate">Freitag, Juli 23 2010</div><br /><a href="../a/321-Loeschen-reicht-nicht,-wir-muessen-auch-sperren.html" title="Löschen reicht nicht, wir müssen auch sperren">Löschen reicht nicht, wir müssen auch sperren</a><br /><div class="serendipitySideBarDate">Donnerstag, Juli 15 2010</div><br /><a href="../a/320-Macbook-Akkupflege.html" title="Macbook Akkupflege">Macbook Akkupflege</a><br /><div class="serendipitySideBarDate">Sonntag, Juni  6 2010</div><br /><a href="../a/319-Google,-das-WLAN-und-das-allgemeine-Unverstaendnis.html" title="Google, das WLAN und das allgemeine Unverständnis">Google, das WLAN und das allgemeine Unverständnis</a><br /><div class="serendipitySideBarDate">Sonntag, Mai 16 2010</div><br /></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_syndication_plugin">
+        <h3 class="serendipitySideBarTitle serendipity_syndication_plugin">Blog abonnieren</h3>        <div class="serendipitySideBarContent">        <div style="padding-bottom: 2px;">
+			<a href="http://feeds.feedburner.com/blogaddict"><img src="../feed-icon16x16.png" alt="" style="border:0"/></a>
+            			<a href="http://feeds.feedburner.com/blogaddict">Blogaddict abonnieren!</a>
+            		</div>
+</div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_plugin_statistics">
+        <h3 class="serendipitySideBarTitle serendipity_plugin_statistics">Statistiken</h3>        <div class="serendipitySideBarContent"><div class="stat_lastentry">Letzter Eintrag: <span class="stat_string">03.06.2011 10:21</span></div>
+<div class="stat_entrycount"><span class="stat_number">303</span> Beiträge geschrieben</div>
+</div>
+    </div>
+    </div>
+    <div class="serendipitySideBarItem container_blogbuttons">
+        <h3 class="serendipitySideBarTitle blogbuttons">Powered by</h3>
+        <div class="serendipitySideBarContent">
+	<a href="http://www.s9y.org/" target="_blank"><img src="../templates/default/img/s9y_banner_small.png" border="0"></a><br/>
+	<a href="http://www.cocomment.com/invitation/blogaddict"><img src="http://www.cocomment.com/images/cocomment-integrated.gif" height="15" width="80" border="0" alt="CoComment Integrated"></a><br/>
+	<script type="text/javascript" src="http://embed.technorati.com/embed/i5k95k4ezz.js"></script><br/>
+	</div>
+    </div>
+</td>
+    </tr>
+</table>
+
+<!-- Feedburner Stats --><script src="http://feeds.feedburner.com/~s/blogaddict?i=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F306-Serverguard-Benachrichtigungen-mit-Prowl.html" type="text/javascript" charset="utf-8"></script>
+<!-- Piwik -->
+<script language="javascript" src="http://www.movu.de/piwik.js" type="text/javascript"></script><script type="text/javascript">
+<!--
+piwik_action_name = '';
+piwik_idsite = 6;
+piwik_url = 'http://www.movu.de/piwik.php';
+piwik_log(piwik_action_name, piwik_idsite, piwik_url);
+//-->
+</script><object>
+<noscript><p><img src="http://www.movu.de/piwik.php" style="border:0" alt="piwik"/></p></noscript></object>
+<!-- /Piwik --> 
+
+permalink/serverguard-prowl.html
+<img src="../plugin/checkautobackup/index.html" width="1" height="1" style="border: 0px" alt="" />
+</body>
+</html>

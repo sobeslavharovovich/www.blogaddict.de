@@ -1,0 +1,766 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title>Linux  - Blogaddict</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="microid" content="mailto+http:sha1:f73202fa68a45873f26c6ee69d5325cba819e711" />
+    <link rel="stylesheet" type="text/css" href="../../serendipity.css" />
+    <link rel="alternate"  type="application/rss+xml" title="Blogaddict RSS feed" href="http://www.blogaddict.de/feeds/index.rss2" />
+    <link rel="alternate"  type="application/x.atom+xml"  title="Blogaddict Atom feed"  href="http://www.blogaddict.de/feeds/atom.xml" />
+
+<script type="text/javascript" src="../../plugin/ls-js/index.html"></script><link rel="pingback" href="../../serendipity_xmlrpc.php.html" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../serendipity_xmlrpc.php%3Fxsd=true.html" />
+
+
+<meta name="google-site-verification" content="VW1KZzlLfapPcjW9tjMPsvNkqURae-T5Q58SBvSpHm8" />
+<meta name="ICBM" content="48.185918,11.64098">
+
+</head>
+
+<body>
+
+<div id="serendipity_banner">
+    <h1><a class="homelink1" href="../../index.html">Linux</a></h1>
+    <h2><a class="homelink2" href="../../index.html">Blogaddict</a></h2>
+</div>
+
+<table id="mainpane">
+    <tr>
+        <td id="content" valign="top"><!-- CONTENT START -->
+
+	<div class="serendipity_content_message"></div>
+
+<!-- ENTRIES START -->
+    
+
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Mittwoch, 28. April 2010</h3>
+        
+                <h4 class="serendipity_title"><a href="../../a/314-iPhone-Push-fuer-FTP-Uploads.html">iPhone-Push für FTP-Uploads</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p>Wenn man einen FTP-Server hauptsächlich dazu betreibt, dort vereinzelte Dateien von anderen Leuten zu empfangen, kann es lohnen über Uploads informiert zu werden. Pure-FTPd bietet - abseits von einer sehr einfachen Einrichtung - die schöne Möglichkeit für jeden abgeschlossenen Download ein Skript auszuführen.</p><br />
+<p>Basierend auf meinem <a href="../../permalink/serverguard-prowl.html">Prowl-Skript für Serverguard</a> ist schnell eine Upload-Benachrichtigung für Pure-FTP gebastelt: <a href="http://github.com/mariow/smorgasbord/blob/master/pureftp_uploadscript_prowl.php">pureftp_uploadscript_prowl.php</a></p><br />
+<p>Das Skript nimmt den neuen Dateinamen aus der Kommandozeile entgegen und verarbeitet die per Environment übergebenen Informationen zu Dateigröße und Besitzer in eine Prowl-Nachricht. Zur Installation muss das Skript nur in <i>/usr/local/bin</i> kopiert, mit <i>chmod +x pureftp_uploadscript_prowl.php</i> ausführbar gemacht und im Skript selbst die Variable <i>$apikey</i> mit dem Prowl API-Key gefült werden. Die Integration in pureftpd geschieht bei einem Debian-System ganz einfach über drei Einträge in <i>/etc/defaults/pure-ftpd-common</i>:</p><br />
+<p>UPLOADSCRIPT=/usr/local/bin/pureftp_uploadscript_prowl.php<br /><br />
+UPLOADUID=&lt;uid des ftpusers&gt;<br /><br />
+UPLOADGID=&lt;gid des ftpusers&gt;</p><br />
+<p>Bei anderen Distributionen muss der Aufruf von <i>pure-uploadscript</i> wie folgt angepasst werden:</p><br />
+<p>pure-uploadscript -r /usr/local/bin/pureftp_uploadscript_prowl.php -B -u &lt;uid des ftpusers&gt; -g &lt;gid des ftpusers&gt;</p><br />
+<p>Schließlich noch ein Neustart von pure-ftpd und künftig wird jeder erfolgreiche Upload mit einer Push-Notification auf dem iPhone angekündigt!</p><br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="../../a/314-iPhone-Push-fuer-FTP-Uploads.html">10:16</a>
+
+                                                            | <a href="../../a/314-iPhone-Push-fuer-FTP-Uploads.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="../../a/314-iPhone-Push-fuer-FTP-Uploads.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="../../plugin/tag/ftp/index.html" title="ftp" rel="tag">ftp</a>, <a href="../../plugin/tag/iphone/index.html" title="iphone" rel="tag">iphone</a>, <a href="../../plugin/tag/prowl/index.html" title="prowl" rel="tag">prowl</a>, <a href="../../plugin/tag/pureftpd/index.html" title="pureftpd" rel="tag">pureftpd</a>, <a href="../../plugin/tag/push/index.html" title="push" rel="tag">push</a></div><br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote314'></a><span class="serendipity_karmaVoting_visits"> 2519 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'iPhone-Push für FTP-Uploads';
+var flattr_dsc = 'Wenn man einen FTP-Server hauptsächlich dazu betreibt, dort vereinzelte Dateien von anderen Leuten zu empfangen, kann es lohnen über Uploads informiert zu werden. Pure-FTPd bietet - abseits von einer sehr einfachen Einrichtung - die schöne Möglichkeit für jeden abgeschlossenen Download ein Skript auszuführen. Basierend auf meinem Prowl-Skript für Serverguard ist schnell eine Upload-Benachrichtigung für Pure-FTP gebastelt: pureftp_uploadscript_prowl.php Das Skript nimmt den neuen Dateinamen aus der Kommandozeile entgegen und verarbeitet die per Environment übergebenen Informationen zu Dateigröße und Besitzer in eine Prowl-Nachricht. Zur Installation muss das Skript nur in /usr/local/bin kopiert, mit chmod +x pureftp_uploadscript_prowl.php ausführbar gemacht und im Skript selbst die Variable $apikey mit dem Prowl API-Key gefült werden. Die Integration in pureftpd geschieht bei einem Debian-System ganz einfach über drei Einträge in /etc/defaults/pure-ftpd-common: UPLOADSCRIPT=/usr/local/bin/pureftp_uploadscript_prowl.php UPLOADUID=&lt;uid des ftpusers&gt; UPLOADGID=&lt;gid des ftpusers&gt; Bei anderen Distributionen muss der Aufruf von pure-uploadscript wie folgt angepasst werden: pure-uploadscript -r /usr/local/bin/pureftp_uploadscript_prowl.php -B -u &lt;uid des ftpusers&gt; -g &lt;gid des ftpusers&gt; Schließlich noch ein Neustart von pure-ftpd und künftig wird jeder erfolgreiche Upload mit einer Push-Notification auf dem iPhone angekündigt! ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'ftp,iphone,prowl,pureftpd,push';
+var flattr_url = 'http://www.blogaddict.de/a/314-iPhone-Push-fuer-FTP-Uploads.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_314.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=314"
+                 dc:title="iPhone-Push für FTP-Uploads"
+                 dc:identifier="http://www.blogaddict.de/a/314-iPhone-Push-fuer-FTP-Uploads.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F314-iPhone-Push-fuer-FTP-Uploads.html&amp;exttitle=iPhone-Push%20f%C3%BCr%20FTP-Uploads" title="iPhone-Push für FTP-Uploads bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F314-iPhone-Push-fuer-FTP-Uploads.html" title="iPhone-Push für FTP-Uploads bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F314-iPhone-Push-fuer-FTP-Uploads.html&amp;title=iPhone-Push%20f%C3%BCr%20FTP-Uploads" title="iPhone-Push für FTP-Uploads bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F314-iPhone-Push-fuer-FTP-Uploads.html&amp;title=iPhone-Push%20f%C3%BCr%20FTP-Uploads" title="iPhone-Push für FTP-Uploads bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Samstag, 13. Februar 2010</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html">gFTP Passwort sichtbar machen</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p>Möglicherweise ist das ein Einzelschicksal, aber mir passiert es regelmäßig, dass ich ein FTP-Passwort zwar in gFTP gespeichert habe, aber nirgendwo mehr im Klartext nachsehen kann. Auf dem Mac ist das dank Schlüsselbundverwaltung kein Thema, GNOME bietet aber nichts vergleichbares bzw. gFTP nutzt es nicht.</p><br />
+<p>Nun speichert <a href="http://gftp.seul.org/">gFTP</a> die Passwörter aber nicht verschlüsselt, sondern macht sie nur schwerer lesbar. Das ist zwar für die Sicherheit insgesamt etwas unglücklich, ermöglicht aber das auslesen des Passworts. <a href="http://www.g-loaded.eu/2009/05/07/descramble-passwords-from-gftp-bookmarks-using-python/">George Notaras hat den Code des Descramblers von C in Python übersetzt</a> und durch einfaches anhängen von zwei Zeilen zur Ausgabe habe ich nun ein Tool um Passwörter sichtbar zu machen.</p><br />
+<p>Alles was nötig ist, ist das zerhackte Passwort aus der gFTP-Config zu holen und dann den Descrambler auf der Kommandozeile aufzurufen:<br /><br />
+<cite>python descramble_gftp.py $scrambledPass$</cite></p><br />
+<p>Den Code für den fertigen Descrambler (der wie gesagt ganze zwei Zeilen Eigenleistung von mir enthält, aller Dank gilt hier also George Notaras) hab ich bei Github abgelegt: <a href="http://github.com/mariow/smorgasbord/blob/master/descramble_gftp.py">descramble_gftp</a></p><br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html">22:38</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html#comments">Kommentar (1)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/gftp" title="gftp" rel="tag">gftp</a>, <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="http://www.blogaddict.de/plugin/tag/passwort" title="passwort" rel="tag">passwort</a>, <a href="http://www.blogaddict.de/plugin/tag/sicherheit" title="sicherheit" rel="tag">sicherheit</a></div><br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote308'></a><span class="serendipity_karmaVoting_visits"> 1981 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'gFTP Passwort sichtbar machen';
+var flattr_dsc = 'Möglicherweise ist das ein Einzelschicksal, aber mir passiert es regelmäßig, dass ich ein FTP-Passwort zwar in gFTP gespeichert habe, aber nirgendwo mehr im Klartext nachsehen kann. Auf dem Mac ist das dank Schlüsselbundverwaltung kein Thema, GNOME bietet aber nichts vergleichbares bzw. gFTP nutzt es nicht. Nun speichert gFTP die Passwörter aber nicht verschlüsselt, sondern macht sie nur schwerer lesbar. Das ist zwar für die Sicherheit insgesamt etwas unglücklich, ermöglicht aber das auslesen des Passworts. George Notaras hat den Code des Descramblers von C in Python übersetzt und durch einfaches anhängen von zwei Zeilen zur Ausgabe habe ich nun ein Tool um Passwörter sichtbar zu machen. Alles was nötig ist, ist das zerhackte Passwort aus der gFTP-Config zu holen und dann den Descrambler auf der Kommandozeile aufzurufen: python descramble_gftp.py $scrambledPass$ Den Code für den fertigen Descrambler (der wie gesagt ganze zwei Zeilen Eigenleistung von mir enthält, aller Dank gilt hier also George Notaras) hab ich bei Github abgelegt: descramble_gftp ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'gftp,linux,passwort,sicherheit';
+var flattr_url = 'http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_308.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=308"
+                 dc:title="gFTP Passwort sichtbar machen"
+                 dc:identifier="http://www.blogaddict.de/a/308-gFTP-Passwort-sichtbar-machen.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F308-gFTP-Passwort-sichtbar-machen.html&amp;exttitle=gFTP%20Passwort%20sichtbar%20machen" title="gFTP Passwort sichtbar machen bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F308-gFTP-Passwort-sichtbar-machen.html" title="gFTP Passwort sichtbar machen bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F308-gFTP-Passwort-sichtbar-machen.html&amp;title=gFTP%20Passwort%20sichtbar%20machen" title="gFTP Passwort sichtbar machen bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F308-gFTP-Passwort-sichtbar-machen.html&amp;title=gFTP%20Passwort%20sichtbar%20machen" title="gFTP Passwort sichtbar machen bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Sonntag,  2. August 2009</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/282-Memory-Dump.html">Memory Dump</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <span style="opacity: 1 !important;"><object width="480" height="392" data="http://flash.revver.com/player/1.0/player.swf?mediaId=704011" type="application/x-shockwave-flash" id="revver704011124921518646013053"><br />
+  </object></span><br /><br />
+(via <a href="http://www.aptgetupdate.de/2009/07/30/ohne-worte-mac-vs-pc-vs-linux/">Aptgetupdate Mac vs. PC vs. Linux</a>)<br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/282-Memory-Dump.html">14:12</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/282-Memory-Dump.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/282-Memory-Dump.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote282'></a><span class="serendipity_karmaVoting_visits"> 1093 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Memory Dump';
+var flattr_dsc = '    (via Aptgetupdate Mac vs. PC vs. Linux) ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = '';
+var flattr_url = 'http://www.blogaddict.de/a/282-Memory-Dump.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_282.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=282"
+                 dc:title="Memory Dump"
+                 dc:identifier="http://www.blogaddict.de/a/282-Memory-Dump.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F282-Memory-Dump.html&amp;exttitle=Memory%20Dump" title="Memory Dump bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F282-Memory-Dump.html" title="Memory Dump bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F282-Memory-Dump.html&amp;title=Memory%20Dump" title="Memory Dump bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F282-Memory-Dump.html&amp;title=Memory%20Dump" title="Memory Dump bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Dienstag, 11. November 2008</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/238-Garantie-abgelaufen.html">Garantie abgelaufen</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p>Ruft man im Firefox 3 die Liste der Konfigurationsoptionen über "about:config" auf, erscheint diese schöne Warnmeldung: "Hier endet möglicherweise die Gewährleistung! Änderungen der Standardwerte dieser erweiterten Einstellungen können gefährlich für Stabilität, Sicherheit und Geschwindigkeit dieser Anwendung sein. Sie sollten nur fortfahren, wenn Sie genau wissen, was Sie tun.".</p><br />
+<p>Per Klick muss man versprechen, dass man vorsichtig sein wird.</p><br />
+<p><a href="http://www.blogaddict.de/uploads/firefox-gewaehrleistung.png"><img src="http://www.blogaddict.de/uploads/firefox-gewaehrleistung-tm.jpg" alt="firefox-gewaehrleistung.png" border="0"/></a></p><br />
+<p>Aber im Ernst: Gibt es in Deutschland eine Gewährleistungspflicht auch für kostenlose Software? Oder nutzt der Warhinweis eher zufällig oder dank übereifriger Übersetzung den Begriff "Gewährleistung"?</p>
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/238-Garantie-abgelaufen.html">18:25</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/238-Garantie-abgelaufen.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/238-Garantie-abgelaufen.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/firefox" title="firefox" rel="tag">firefox</a>, <a href="http://www.blogaddict.de/plugin/tag/kurios" title="kurios" rel="tag">kurios</a>, <a href="http://www.blogaddict.de/plugin/tag/software" title="software" rel="tag">software</a></div><br /><div class="entry_last_modified" style="text-align: right">Zuletzt bearbeitet am 11.11.2008 18:32</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote238'></a><span class="serendipity_karmaVoting_visits"> 873 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Garantie abgelaufen';
+var flattr_dsc = 'Ruft man im Firefox 3 die Liste der Konfigurationsoptionen über \"about:config\" auf, erscheint diese schöne Warnmeldung: \"Hier endet möglicherweise die Gewährleistung! Änderungen der Standardwerte dieser erweiterten Einstellungen können gefährlich für Stabilität, Sicherheit und Geschwindigkeit dieser Anwendung sein. Sie sollten nur fortfahren, wenn Sie genau wissen, was Sie tun.\". Per Klick muss man versprechen, dass man vorsichtig sein wird.  Aber im Ernst: Gibt es in Deutschland eine Gewährleistungspflicht auch für kostenlose Software? Oder nutzt der Warhinweis eher zufällig oder dank übereifriger Übersetzung den Begriff \"Gewährleistung\"?';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'firefox,kurios,software';
+var flattr_url = 'http://www.blogaddict.de/a/238-Garantie-abgelaufen.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_238.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=238"
+                 dc:title="Garantie abgelaufen"
+                 dc:identifier="http://www.blogaddict.de/a/238-Garantie-abgelaufen.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F238-Garantie-abgelaufen.html&amp;exttitle=Garantie%20abgelaufen" title="Garantie abgelaufen bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F238-Garantie-abgelaufen.html" title="Garantie abgelaufen bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F238-Garantie-abgelaufen.html&amp;title=Garantie%20abgelaufen" title="Garantie abgelaufen bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F238-Garantie-abgelaufen.html&amp;title=Garantie%20abgelaufen" title="Garantie abgelaufen bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Freitag, 25. Juli 2008</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html">SysAdmin Day 2008!</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p>Fast hätte ich auch dieses Jahr den SysAdmin Day einfach verpennt , wenn da nicht das <a href="https://www.adminlife.net/adminlife/happy-sysadmin-day-2008/">Posting von Matthias</a> heute morgen ganz oben im Google Reader gewesen wäre.<br /><br />
+In diesem Sinne: Allen Sysadmins einen katastrophenfreien Tag! Und wer nicht weiss worum es beim Sysadmin Day geht, sollte hier nochmal nachlesen: <a href="http://www.sysadminday.com/">System Administrator Appreciation Day</a></p><p><script src="http://flash.revver.com/player/1.0/player.js?mediaId:5580;affiliate:103634;width:480;height:392" type="text/javascript"></script></p><br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html">07:57</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/admin" title="admin" rel="tag">admin</a>, <a href="http://www.blogaddict.de/plugin/tag/administration" title="administration" rel="tag">administration</a>, <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="http://www.blogaddict.de/plugin/tag/sysadmin" title="sysadmin" rel="tag">sysadmin</a></div><br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote185'></a><span class="serendipity_karmaVoting_visits"> 1115 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'SysAdmin Day 2008!';
+var flattr_dsc = 'Fast hätte ich auch dieses Jahr den SysAdmin Day einfach verpennt , wenn da nicht das Posting von Matthias heute morgen ganz oben im Google Reader gewesen wäre. In diesem Sinne: Allen Sysadmins einen katastrophenfreien Tag! Und wer nicht weiss worum es beim Sysadmin Day geht, sollte hier nochmal nachlesen: System Administrator Appreciation Day ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'admin,administration,linux,sysadmin';
+var flattr_url = 'http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_185.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=185"
+                 dc:title="SysAdmin Day 2008!"
+                 dc:identifier="http://www.blogaddict.de/a/185-SysAdmin-Day-2008!.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F185-SysAdmin-Day-2008%21.html&amp;exttitle=SysAdmin%20Day%202008%21" title="SysAdmin Day 2008! bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F185-SysAdmin-Day-2008%21.html" title="SysAdmin Day 2008! bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F185-SysAdmin-Day-2008%21.html&amp;title=SysAdmin%20Day%202008%21" title="SysAdmin Day 2008! bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F185-SysAdmin-Day-2008%21.html&amp;title=SysAdmin%20Day%202008%21" title="SysAdmin Day 2008! bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Mittwoch, 18. Juni 2008</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html">Twhirl läuft unter Linux</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <p><img src="http://www.blogaddict.de/uploads/twhirl.jpg" width="207" height="91" alt="twhirl.jpg" style="float:right; padding-top:5px; padding-right:5px; padding-bottom:5px; padding-left:5px;" />Offiziell funktioniert der Twitter-Client <a href="http://www.twhirl.org/">Twhirl</a> nur unter Windows und Mac OSX - eben weil Adobe Air nur dort verfügbar ist und Twhirl darauf läuft.</p><br />
+<p>Adobe arbeitet aber aktuell an einer Linux-Umsetzung von Air und hat bereits eine öffentliche Alpha-Version zum Download gestellt. Darüber lässt sich Twhirl erstaunlich problemlos auf Linux betreiben.</p><br />
+<p>So gehts:<br /><br />
+Als erstes muss Adobe Air Alpha für Linux heruntergeladen und installiert werden. Die <a href="http://labs.adobe.com/technologies/air/">Adobe Labs</a> bieten den Download ohne Registrierung oder ähnlich Hürden an. (Direkter Download: <a href="http://download.macromedia.com/pub/labs/air/linux/adobeair_linux_a1_033108.bin">Adobe Air Linux A1 033108</a>).<br /><br />
+Die heruntergeladene Datei muss per <em>chmod +x adobeair_linux_a1_033108.bin</em> ausführbar und dann mit <em>./adobeair_linux_a1_033108.bin</em> gestartet werden. Der Installer sollte selbsterklärend sein. Danach noch Firefox neu starten und dann auf der T<a href="http://www.twhirl.org/">whirl-Seite</a> den Direktdownload des aktuellen Releases starten. Der automatische Installer auf der Seite geht nicht, etwas tiefer gibt es aber Instruktionen für den manuellen Download (direkter Download von <a href="http://www.twhirl.org/files/twhirl-0.8.2.air">Twhirl 0.8.2</a>). Firefox sollte nur automatisch vorschlagen, dass die .air-Datei mit dem Adobe Air Installer geöffnet wird. Nach der Installation ist Twhirl auf Gnome im Menü "Sonstiges" zu finden und sieht bis auf die fehlende Transparenz am Fensterrahmen wie gewohnt aus.</p><br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html">22:42</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/adobe+air" title="adobe air" rel="tag">adobe air</a>, <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="http://www.blogaddict.de/plugin/tag/twhirl" title="twhirl" rel="tag">twhirl</a>, <a href="http://www.blogaddict.de/plugin/tag/twitter" title="twitter" rel="tag">twitter</a></div><br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote173'></a><span class="serendipity_karmaVoting_visits"> 1602 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Twhirl läuft unter Linux';
+var flattr_dsc = 'Offiziell funktioniert der Twitter-Client Twhirl nur unter Windows und Mac OSX - eben weil Adobe Air nur dort verfügbar ist und Twhirl darauf läuft. Adobe arbeitet aber aktuell an einer Linux-Umsetzung von Air und hat bereits eine öffentliche Alpha-Version zum Download gestellt. Darüber lässt sich Twhirl erstaunlich problemlos auf Linux betreiben. So gehts: Als erstes muss Adobe Air Alpha für Linux heruntergeladen und installiert werden. Die Adobe Labs bieten den Download ohne Registrierung oder ähnlich Hürden an. (Direkter Download: Adobe Air Linux A1 033108). Die heruntergeladene Datei muss per chmod +x adobeair_linux_a1_033108.bin ausführbar und dann mit ./adobeair_linux_a1_033108.bin gestartet werden. Der Installer sollte selbsterklärend sein. Danach noch Firefox neu starten und dann auf der Twhirl-Seite den Direktdownload des aktuellen Releases starten. Der automatische Installer auf der Seite geht nicht, etwas tiefer gibt es aber Instruktionen für den manuellen Download (direkter Download von Twhirl 0.8.2). Firefox sollte nur automatisch vorschlagen, dass die .air-Datei mit dem Adobe Air Installer geöffnet wird. Nach der Installation ist Twhirl auf Gnome im Menü \"Sonstiges\" zu finden und sieht bis auf die fehlende Transparenz am Fensterrahmen wie gewohnt aus. ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'adobe air,linux,twhirl,twitter';
+var flattr_url = 'http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_173.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=173"
+                 dc:title="Twhirl läuft unter Linux"
+                 dc:identifier="http://www.blogaddict.de/a/173-Twhirl-laeuft-unter-Linux.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F173-Twhirl-laeuft-unter-Linux.html&amp;exttitle=Twhirl%20l%C3%A4uft%20unter%20Linux" title="Twhirl läuft unter Linux bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F173-Twhirl-laeuft-unter-Linux.html" title="Twhirl läuft unter Linux bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F173-Twhirl-laeuft-unter-Linux.html&amp;title=Twhirl%20l%C3%A4uft%20unter%20Linux" title="Twhirl läuft unter Linux bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F173-Twhirl-laeuft-unter-Linux.html&amp;title=Twhirl%20l%C3%A4uft%20unter%20Linux" title="Twhirl läuft unter Linux bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Montag, 19. Mai 2008</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html">Abo-Service beim Linux-Magazin</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                Nachdem sich <a href="https://www.adminlife.net/privat/positivbeispiel-fuer-kundenservice/" target="_blank">Matthias kürzlich schon über den guten Service bei der Linux New Media gefreut hat</a>, hätte ich eigentlich nichts anderes erwarten sollten. Trotzdem schön zu sehen das meine Anfrage wegen Adressänderung die ich am Wochenende gestellt habe schon heute morgen vor neun Uhr bearbeitet war. Und besonders schön: Das aktuelle Heft hat die Post vernichtet weil ich übersehen habe, dass Zeitschriften nicht nachgeschickt werden - und nun bekomme ich es trotzdem ohne Mehrkosten an meine neue Anschrift geschickt. Vielen Dank!<br />
+
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html">08:52</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/abo" title="abo" rel="tag">abo</a>, <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="http://www.blogaddict.de/plugin/tag/zeitschrift" title="zeitschrift" rel="tag">zeitschrift</a></div><br /><div class="entry_last_modified" style="text-align: right">Not modified</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote160'></a><span class="serendipity_karmaVoting_visits"> 1155 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Abo-Service beim Linux-Magazin';
+var flattr_dsc = 'Nachdem sich Matthias kürzlich schon über den guten Service bei der Linux New Media gefreut hat, hätte ich eigentlich nichts anderes erwarten sollten. Trotzdem schön zu sehen das meine Anfrage wegen Adressänderung die ich am Wochenende gestellt habe schon heute morgen vor neun Uhr bearbeitet war. Und besonders schön: Das aktuelle Heft hat die Post vernichtet weil ich übersehen habe, dass Zeitschriften nicht nachgeschickt werden - und nun bekomme ich es trotzdem ohne Mehrkosten an meine neue Anschrift geschickt. Vielen Dank!  ';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'abo,linux,zeitschrift';
+var flattr_url = 'http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_160.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=160"
+                 dc:title="Abo-Service beim Linux-Magazin"
+                 dc:identifier="http://www.blogaddict.de/a/160-Abo-Service-beim-Linux-Magazin.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F160-Abo-Service-beim-Linux-Magazin.html&amp;exttitle=Abo-Service%20beim%20Linux-Magazin" title="Abo-Service beim Linux-Magazin bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F160-Abo-Service-beim-Linux-Magazin.html" title="Abo-Service beim Linux-Magazin bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F160-Abo-Service-beim-Linux-Magazin.html&amp;title=Abo-Service%20beim%20Linux-Magazin" title="Abo-Service beim Linux-Magazin bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F160-Abo-Service-beim-Linux-Magazin.html&amp;title=Abo-Service%20beim%20Linux-Magazin" title="Abo-Service beim Linux-Magazin bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+        <div class="serendipity_Entry_Date">
+                <h3 class="serendipity_date">Samstag, 17. Mai 2008</h3>
+        
+                <h4 class="serendipity_title"><a href="http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html">Ubuntu deinstallieren</a></h4>
+
+        <div class="serendipity_entry serendipity_entry_author_Blogaddict ">
+                        <span class="serendipity_entryIcon">
+                                                    </span>
+            
+            <div class="serendipity_entry_body">
+                <br />
+<p>Vor zwei Wochen wurde Ubuntu 8.04 LTS veröffentlicht. Jetzt sehe ich auf der Ubuntu Webseite gerade diesen wunderschönen Banner für die neue Version (per Klick gehts zum großen Bild):</p><p><a class="serendipity_image_link" href="http://www.blogaddict.de/uploads/uninstall_ubuntu_gross.jpg" onclick="F1 = window.open('/uploads/uninstall_ubuntu_gross.jpg','Zoom','height=179,width=667,top=318,left=314,toolbar=no,menubar=no,location=no,resize=1,resizable=1,scrollbars=yes'); return false;"><!-- s9ymdb:46 --><img height="28" width="110" class="serendipity_image_center" style="border: 0px none ; padding-left: 5px; padding-right: 5px;" src="http://www.blogaddict.de/uploads/uninstall_ubuntu_gross.s9yThumb.jpg" /></a></p>
+            </div>
+
+            
+            
+            <div class='serendipity_entryFooter'>
+                Geschrieben von <a href="http://www.blogaddict.de/autoren/2-Blogaddict">Blogaddict</a>
+                                   in <a href="index.html">Linux</a>                
+                                    um
+                 <a href="http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html">15:02</a>
+
+                                                            | <a href="http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html#comments">Kommentare (0)</a>
+                                    
+                                                            | <a href="http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html#trackbacks">Trackbacks (0)</a>
+                                    
+                
+                <div class="serendipity_freeTag">Tags für diesen Artikel: <a href="http://www.blogaddict.de/plugin/tag/linux" title="linux" rel="tag">linux</a>, <a href="http://www.blogaddict.de/plugin/tag/ubuntu" title="ubuntu" rel="tag">ubuntu</a></div><br /><div class="entry_last_modified" style="text-align: right">Zuletzt bearbeitet am 17.05.2008 15:07</div><div class='serendipity_karmaVoting serendipity_karmaVoting_images'><a id='karma_vote156'></a><span class="serendipity_karmaVoting_visits"> 1176 Klicks</span>
+</div>
+
+<script type="text/javascript">
+var flattr_uid = '11878';
+var flattr_tle = 'Ubuntu deinstallieren';
+var flattr_dsc = '  Vor zwei Wochen wurde Ubuntu 8.04 LTS veröffentlicht. Jetzt sehe ich auf der Ubuntu Webseite gerade diesen wunderschönen Banner für die neue Version (per Klick gehts zum großen Bild):';
+var flattr_cat = 'text';
+var flattr_lng = 'de_DE';
+var flattr_tag = 'linux,ubuntu';
+var flattr_url = 'http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html';
+var flattr_btn = 'compact';
+</script>
+<script src="http://api.flattr.com/button/load.js" type="text/javascript"></script>
+
+            </div>
+        </div>
+        <!--
+        <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                 xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/"
+                 xmlns:dc="http://purl.org/dc/elements/1.1/">
+        <rdf:Description
+                 rdf:about="http://www.blogaddict.de/feeds/ei_156.rdf"
+                 trackback:ping="http://www.blogaddict.de/comment.php?type=trackback&amp;entry_id=156"
+                 dc:title="Ubuntu deinstallieren"
+                 dc:identifier="http://www.blogaddict.de/a/156-Ubuntu-deinstallieren.html" />
+        </rdf:RDF>
+        -->
+        <!-- no digg badge --><div class="serendipity_findmore">
+
+<span style="font-style: italic;">Bookmark:&nbsp;&nbsp;</span>
+
+<a href="http://yigg.de/neu?exturl=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F156-Ubuntu-deinstallieren.html&amp;exttitle=Ubuntu%20deinstallieren" title="Ubuntu deinstallieren bei yigg.de anlegen">yigg.de</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F156-Ubuntu-deinstallieren.html" title="Ubuntu deinstallieren bei Mister Wong bookmarken">wong it</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F156-Ubuntu-deinstallieren.html&amp;title=Ubuntu%20deinstallieren" title="Ubuntu deinstallieren bei del.icio.us bookmarken">del.icio.us</a>
+
+&nbsp;|&nbsp;
+
+<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F156-Ubuntu-deinstallieren.html&amp;title=Ubuntu%20deinstallieren" title="Ubuntu deinstallieren bei Google bookmarken">Google</a>
+
+</div>
+
+        
+        
+        
+            </div>
+    
+    <div class='serendipity_entryFooter' style="text-align: center">
+    
+            (Seite 1 von 1, insgesamt 8 Einträge)
+    
+    
+    
+    </div>
+<!-- ENTRIES END -->
+
+
+<!-- CONTENT END --></td>
+        <td id="serendipityRightSideBar" valign="top">    <div class="serendipitySideBarItem container_imprint">
+        <div class="serendipitySideBarContent"><a href="../../pages/impressum.html" rel="nofollow">Impressum</a></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_quicksearch_plugin">
+        <h3 class="serendipitySideBarTitle serendipity_quicksearch_plugin">Suche</h3>        <div class="serendipitySideBarContent"><form id="searchform" action="http://www.blogaddict.de/index.php" method="get">
+    <div>
+        <input type="hidden"  name="serendipity[action]" value="search" />
+        <input alt="Suche" type="text"   id="serendipityQuickSearchTermField" name="serendipity[searchTerm]" size="13" style="width: 12em;" />
+		<input class="quicksearch_submit" type="submit" value="&gt;" alt="Suche" name="serendipity[searchButton]" title="Los!" style="width: 2em;" />
+    </div>
+    <div id="LSResult" style="display: none;"><div id="LSShadow"></div></div>
+</form>
+<script type="text/javascript">
+                    lsbase = "http://www.blogaddict.de/plugin/ls?";
+                    waittext = "Suche aktiviert, bitte warten...";
+                    notfoundtext = "Kein passender Eintrag vorhanden";
+                    addLoadEvent(liveSearchInit);
+                    </script></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_plugin_recententries">
+        <h3 class="serendipitySideBarTitle serendipity_plugin_recententries">Aktuelle Einträge</h3>        <div class="serendipitySideBarContent"><a href="../../a/328-Waterclimb-2011.html" title="Waterclimb 2011">Waterclimb 2011</a><br /><div class="serendipitySideBarDate">Freitag, Juni  3 2011</div><br /><a href="../../a/327-So-schoen-kann-ein-Schneesturm-sein.html" title="So schön kann ein Schneesturm sein">So schön kann ein Schneesturm sein</a><br /><div class="serendipitySideBarDate">Freitag, Dezember 31 2010</div><br /><a href="../../a/326-Skype-5-Mac-lesbar-machen.html" title="Skype 5 Mac lesbar machen">Skype 5 Mac lesbar machen</a><br /><div class="serendipitySideBarDate">Freitag, November  5 2010</div><br /><a href="../../a/325-Gute-Frage.html" title="Gute Frage">Gute Frage</a><br /><div class="serendipitySideBarDate">Freitag, Oktober  1 2010</div><br /><a href="../../a/324-Seltsame-SMS-aus-Vietnam-und-Indien.html" title="Seltsame SMS aus Vietnam und Indien">Seltsame SMS aus Vietnam und Indien</a><br /><div class="serendipitySideBarDate">Sonntag, Juli 25 2010</div><br /><a href="../../a/323-Workaround-Prototype-1.6.1-und-X-JSON-in-Firefox.html" title="Workaround: Prototype 1.6.1 und X-JSON in Firefox">Workaround: Prototype 1.6.1 und X-JSON in Firefox</a><br /><div class="serendipitySideBarDate">Freitag, Juli 23 2010</div><br /><a href="../../a/322-Was-ich-lieber-haette-als-einen-Gratis-Bumper.html" title="Was ich lieber hätte als einen Gratis-Bumper">Was ich lieber hätte als einen Gratis-Bumper</a><br /><div class="serendipitySideBarDate">Freitag, Juli 23 2010</div><br /><a href="../../a/321-Loeschen-reicht-nicht,-wir-muessen-auch-sperren.html" title="Löschen reicht nicht, wir müssen auch sperren">Löschen reicht nicht, wir müssen auch sperren</a><br /><div class="serendipitySideBarDate">Donnerstag, Juli 15 2010</div><br /><a href="../../a/320-Macbook-Akkupflege.html" title="Macbook Akkupflege">Macbook Akkupflege</a><br /><div class="serendipitySideBarDate">Sonntag, Juni  6 2010</div><br /><a href="../../a/319-Google,-das-WLAN-und-das-allgemeine-Unverstaendnis.html" title="Google, das WLAN und das allgemeine Unverständnis">Google, das WLAN und das allgemeine Unverständnis</a><br /><div class="serendipitySideBarDate">Sonntag, Mai 16 2010</div><br /></div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_syndication_plugin">
+        <h3 class="serendipitySideBarTitle serendipity_syndication_plugin">Blog abonnieren</h3>        <div class="serendipitySideBarContent">        <div style="padding-bottom: 2px;">
+			<a href="http://feeds.feedburner.com/blogaddict"><img src="../../feed-icon16x16.png" alt="" style="border:0"/></a>
+            			<a href="http://feeds.feedburner.com/blogaddict">Blogaddict abonnieren!</a>
+            		</div>
+</div>
+    </div>
+    <div class="serendipitySideBarItem container_serendipity_plugin_statistics">
+        <h3 class="serendipitySideBarTitle serendipity_plugin_statistics">Statistiken</h3>        <div class="serendipitySideBarContent"><div class="stat_lastentry">Letzter Eintrag: <span class="stat_string">03.06.2011 10:21</span></div>
+<div class="stat_entrycount"><span class="stat_number">303</span> Beiträge geschrieben</div>
+</div>
+    </div>
+    </div>
+    <div class="serendipitySideBarItem container_blogbuttons">
+        <h3 class="serendipitySideBarTitle blogbuttons">Powered by</h3>
+        <div class="serendipitySideBarContent">
+	<a href="http://www.s9y.org/" target="_blank"><img src="../../templates/default/img/s9y_banner_small.png" border="0"></a><br/>
+	<a href="http://www.cocomment.com/invitation/blogaddict"><img src="http://www.cocomment.com/images/cocomment-integrated.gif" height="15" width="80" border="0" alt="CoComment Integrated"></a><br/>
+	<script type="text/javascript" src="http://embed.technorati.com/embed/i5k95k4ezz.js"></script><br/>
+	</div>
+    </div>
+</td>
+    </tr>
+</table>
+
+<!-- Feedburner Stats --><script src="http://feeds.feedburner.com/~s/blogaddict?i=http%3A%2F%2Fwww.blogaddict.de%2Fa%2F156-Ubuntu-deinstallieren.html" type="text/javascript" charset="utf-8"></script>
+<!-- Piwik -->
+<script language="javascript" src="http://www.movu.de/piwik.js" type="text/javascript"></script><script type="text/javascript">
+<!--
+piwik_action_name = '';
+piwik_idsite = 6;
+piwik_url = 'http://www.movu.de/piwik.php';
+piwik_log(piwik_action_name, piwik_idsite, piwik_url);
+//-->
+</script><object>
+<noscript><p><img src="http://www.movu.de/piwik.php" style="border:0" alt="piwik"/></p></noscript></object>
+<!-- /Piwik --> 
+
+k/6-Linux
+<img src="../../plugin/checkautobackup/index.html" width="1" height="1" style="border: 0px" alt="" />
+</body>
+</html>
